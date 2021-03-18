@@ -3,7 +3,7 @@ import StoreType from "./types/Store"
 type Respuesta<ContentType> = {
     status: number,
     message : string,
-    content : ContentType | null
+    content : ContentType
 }
 
 const locales : Array<StoreType> = [
@@ -82,7 +82,7 @@ export const getStores = async (page = 0, pageSize = 10) : Promise<Respuesta<Arr
         message: 'Locales'
     }
 
-export const getStore = async (id : number) : Promise<Respuesta<StoreType>> => {
+export const getStore = async (id : number) : Promise<Respuesta<StoreType | null>> => {
     if(!id) throw new Error("Hace falta un ID para obtener el local")
     const el = locales.find(e => e.id === id) || null
     return await {
