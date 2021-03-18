@@ -1,17 +1,18 @@
 import React from 'react';
 // import logo from './logo.svg';
 
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import MobileNavMenu from './components/MobileNavMenu';
 
 import Router from './views'
 
 function App() {
   return (
-    <BrowserRouter>
+    //Hash router solo para github
+    <HashRouter>
       <Router />
       <MobileNavMenu />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
