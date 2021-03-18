@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 
-import * as apiService from '../apiService'
+import * as apiService from '../apiServiceDev'
 
 import StoreRouteParamsType from '../types/StoreRouteParams'
 import StoreType from '../types/Store'
@@ -15,7 +15,7 @@ const Store = (props : any) => {
 
     useEffect(() => {
         apiService
-            .getStore(id)
+            .getStore(Number.parseInt(id))
             .then(res => {
                 setStore(res.content)
                 setError("")
