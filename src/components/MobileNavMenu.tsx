@@ -57,13 +57,17 @@ FooterButton = styled(NavLink)`
     align-items: center;
     justify-content: center;
     color: rgba(0,0,0,0.5);
-    fill: rgba(0,0,0,0.5);
-    &:focus{
-        outline: 0;
+    & svg{
+        fill: rgba(0,0,0,0.5);
     }
     &.active{
         color: #0d6efd;
-        fill: #0d6efd;
+        & svg{
+            fill: #0d6efd;
+        }
+    }
+    &:focus{
+        outline: 0;
     }
 `,
 BuyButton = styled(Link)`
